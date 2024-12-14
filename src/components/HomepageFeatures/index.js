@@ -4,45 +4,51 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Explorer',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Keşfetmek için arayüz.
       </>
     ),
+    link: 'https://explorer.coco-node.com/', // Explorer için bağlantı
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Services',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Servislerinizi yönetin.
       </>
     ),
+    link: '/services', // Services için bağlantı
   },
   {
-    title: 'Powered by React',
+    title: 'Introductions',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Başlangıç rehberi.
       </>
     ),
+    link: '/introductions', // Introductions için bağlantı
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description, link }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <a href={link}>
+          {/* Görsele link ekleme */}
+          <Svg className={styles.featureSvg} role="img" />
+        </a>
       </div>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
+        <h3>
+          {/* Başlığa link ekleme */}
+          <a href={link}>{title}</a>
+        </h3>
         <p>{description}</p>
       </div>
     </div>
